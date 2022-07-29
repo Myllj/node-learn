@@ -14,6 +14,7 @@ app.get('/api/jsonp', (req, res) => {
   // 3. 拼接出一个函数的调用
   const scriptStr = `${funcName}(${JSON.stringify(data)})`
   // 4. 把拼接的字符串，响应给客户端
+  console.log('jsonp请求响应了...');
   res.send(scriptStr)
 })
 
