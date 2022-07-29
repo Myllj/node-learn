@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btnGET">GET</button>
+    <button id="btnPOST">POST</button>
+    <button id="btnDelete">DELETE</button>
+    <button id="btnJSONP">JSONP</button>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      btnGET.onclick = function () {
+        console.log("GET");
+        axios.request({
+          url: " http://127.0.0.1/api/getList",
+          method: "get",
+          params: {
+            pageSize: 10,
+            pageNum:1
+          },
+        }).then(res=>{
+          console.log('GET请求成功',res);
+        }).catch(err=>{
+          console.log('err',err);
+        })
+      };
+
+      btnPOST.onclick = function () {
+        console.log("POST");
+        // http://www.axios-js.com/zh-cn/docs/#%E4%BD%BF%E7%94%A8-application-x-www-form-urlencoded-format
+        // 默认情况下，axios将JavaScript对象序列化为JSON。 要以application / x-www-form-urlencoded格式发送数据，您可以使用以下选项之一。
+        const params = new URLSearchParams();
+        params.append('param1', 'value1');
+        params.append('param2', 'value2');
+        axios.request({
+          url: " http://127.0.0.1/api/login",
+          method: "post",
+          //1.使用application/x-www-form-urlencoded格式，默认是application/json格式，
+          // headers:{
+          //   "Content-Type":"application/x-www-form-urlencoded"
+          // },
+          // data:params
+
+          //2.使用application/json格式，
+          data: {
+            userName: 'llj',
+            passworld:123
+          },
+        }).then(res=>{
+          console.log('POST请求成功',res);
+        }).catch(err=>{
+          console.log('err',err);
+        })
+      };
+
+      //DELETE的请求方式会发起预检请求，预检请求可以在火狐浏览器测试
+      btnDelete.onclick = function () {
+        console.log("DELETE");
+        axios.request({
+          url: " http://127.0.0.1/api/delete",
+          method: "delete",
+          data: {
+            id:'01'
+          },
+        }).then(res=>{
+          console.log('DELETE请求成功',res);
+        }).catch(err=>{
+          console.log('err',err);
+        })
+      };
+
+      //axios不支持JSONP请求方式,
+      //在chrom浏览器控制台网络面板看不到发出去的请求，需查看清打印在控制台；在火狐浏览器控制台网络面板可以看到发出去的请求
+      btnJSONP.onclick = function () {
+        console.log("JSONP请求方式");
+        $.ajax({
+            type: 'GET',
+            url: 'http://127.0.0.1/api/jsonp',
+            dataType: 'jsonp',
+            success: function (res) {
+              console.log(res)
+            },
+          })
+      };
+    </script>
+  </body>
+</html>

@@ -61,6 +61,7 @@ server.on('request', (req, res) => {
 
   // 4.1 根据“映射”过来的文件路径读取文件的内容
   fs.readFile(fpath, 'utf8', (err, dataStr) => {
+    console.log(dataStr);
     // 4.2 读取失败，向客户端响应固定的“错误消息”
     if (err) return res.end('404 Not found.')
     // 4.3 读取成功，将读取成功的内容，响应给客户端
