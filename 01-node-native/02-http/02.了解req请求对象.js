@@ -1,3 +1,12 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: llj
+ * @email: 
+ * @Date: 2024-07-28 12:01:23
+ * @LastEditors: llj
+ * @LastEditTime: 2026-06-14 17:32:28
+ */
 const http=require('http')
 const server=http.createServer()
 // req 是请求对象，包含了与客户端相关的数据和属性
@@ -6,7 +15,7 @@ server.on('request',function(req,res){
    const url=req.url;
     // req.method 是客户端请求的 method 类型
     const method=req.method
-    const str=`Your request url is ${url}, and request method is ${method}`
+    const str=`Your request url is ${url}, and request method is ${method}123`
     console.log(str);
     // 调用 res.end() 方法，向客户端响应一些内容
     res.end(str)

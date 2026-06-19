@@ -1,3 +1,12 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: llj
+ * @email: 
+ * @Date: 2024-07-28 12:02:30
+ * @LastEditors: llj
+ * @LastEditTime: 2026-06-18 15:46:44
+ */
 // 1 资源：cpu 内存
 /* console.log(process.memoryUsage());
 console.log(process.cpuUsage()); */
@@ -50,10 +59,16 @@ fs.createReadStream('test.txt').pipe(process.stdout) */
 
 // process.stdin.pipe(process.stdout)
 
-process.stdin.setEncoding('utf-8')
-process.stdin.on('readable',()=>{
-  let chunk=process.stdin.read()
-  if(chunk!=null){
-    process.stdout.write('data '+chunk)
-  }
-})
+// process.stdin.setEncoding('utf-8')
+// process.stdin.on('readable',()=>{
+//   let chunk=process.stdin.read()
+//   if(chunk!=null){
+//     process.stdout.write('data '+chunk)
+//   }
+// })
+
+require('dotenv').config();
+// 直接读取
+console.log('123:',process.env.DB_HOST);
+console.log('NODE_ENV:',process.env.NODE_ENV);
+console.log('PORT:',process.env.PORT);
