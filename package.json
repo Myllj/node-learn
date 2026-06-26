@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gen-tree": "node gen-tree.js"
+    "gen-tree": "node gen-tree.js",
+    "toc": "doctoc --title \"📑 **目录**\" --minlevel 2 --maxlevel 2 README.md"
   },
   "repository": {
     "type": "git",

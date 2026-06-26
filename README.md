@@ -1,4 +1,32 @@
-## 自动把目录树写入 README.md（从最简单到工程自动化）
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+📑 **目录**
+
+- [📁 项目目录结构](#-%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84)
+- [自动把当前项目目录树写入 README.md（从最简单到工程自动化）](#%E8%87%AA%E5%8A%A8%E6%8A%8A%E5%BD%93%E5%89%8D%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E6%A0%91%E5%86%99%E5%85%A5-readmemd%E4%BB%8E%E6%9C%80%E7%AE%80%E5%8D%95%E5%88%B0%E5%B7%A5%E7%A8%8B%E8%87%AA%E5%8A%A8%E5%8C%96)
+- [根目录下package.json文件里scripts脚本](#%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8Bpackagejson%E6%96%87%E4%BB%B6%E9%87%8Cscripts%E8%84%9A%E6%9C%AC)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
+
+## 📁 项目目录结构
+
+```text
+node-learn/
+├─ 01-node-native/       node的原生知识点
+├─ 02-express-learn/     Express框架学习案例
+├─ 03-operate-mysql/     MySQL数据库基础操作
+├─ 04-prisma-learn/      Prisma ORM框架实操
+├─ case/                 综合实战案例合集
+├─ .gitignore            Git忽略文件配置
+├─ gen-tree.js           自动生成目录树脚本
+├─ package.json          项目依赖与npm脚本配置
+└─ README.md             项目说明文档
+```
+
+
+## 自动把当前项目目录树写入 README.md（从最简单到工程自动化）
 
 ### 方案：自定义 Node 脚本（完全可控，自动替换目录区块）
 
@@ -93,17 +121,14 @@ npm run gen-tree
 
 每次修改文件 / 文件夹，运行命令自动刷新目录，完美适配开发流程。
 
-## 📁 项目目录结构
 
-```text
-node-learn/
-├─ 01-node-native/       node的原生知识点
-├─ 02-express-learn/     Express框架学习案例
-├─ 03-operate-mysql/     MySQL数据库基础操作
-├─ 04-prisma-learn/      Prisma ORM框架实操
-├─ case/                 综合实战案例合集
-├─ .gitignore            Git忽略文件配置
-├─ gen-tree.js           自动生成目录树脚本
-├─ package.json          项目依赖与npm脚本配置
-└─ README.md             项目说明文档
+## 根目录下package.json文件里scripts脚本
 ```
+//生成当前README文件的项目目录结构，具体怎么用仔细阅读当前README文件
+npm run gen-tree
+
+//生成当前README文件头部目录
+npm run toc
+```
+
+
