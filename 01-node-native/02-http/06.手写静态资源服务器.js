@@ -5,7 +5,7 @@
  * @email: 
  * @Date: 2026-06-16 10:59:38
  * @LastEditors: llj
- * @LastEditTime: 2026-06-16 11:42:21
+ * @LastEditTime: 2026-06-20 16:13:47
  */
 const http = require('http')
 const fs = require('fs')
@@ -18,6 +18,7 @@ const server = http.createServer((req, res) => {
   let filePath = path.join(__dirname, './dist', req.url === '/' ? '/index.html' : getCustomPath)
   
   console.log('请求路径：',getCustomPath)
+  console.log('文件路径：',filePath)
   // 读取静态文件
   fs.readFile(filePath, (err, data) => {
     if (err) {

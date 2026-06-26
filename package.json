@@ -1,0 +1,24 @@
+{
+  "name": "learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen-tree": "node gen-tree.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Myllj/node-learn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Myllj/node-learn/issues"
+  },
+  "homepage": "https://github.com/Myllj/node-learn#readme",
+  "volta": {
+    "node": "16.20.2"
+  }
+}
